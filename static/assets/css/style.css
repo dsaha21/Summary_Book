@@ -1,0 +1,464 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== Scrollbar CSS ===== */
+ 
+body{
+    background: #ccbbfa;
+}
+
+.body_wrapper{
+    background: linear-gradient(to right, #ccbbfa, #eaafc8);
+    height: 100vh;
+    padding: 50px 0;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+ 
+    background-color: #f8f8f8;
+  }
+  .card:hover {
+    transform: scale(1.05);
+  }
+  .card-header {
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+  }
+  .form-group label {
+    font-weight: bold;
+  }
+  .form-control:focus {
+    box-shadow: none;
+  }
+  .btn-login {
+    background-color: #654ea3;
+    border-color: #654ea3;
+    transition: all 0.3s ease-in-out;
+    width: 50%;
+
+  }
+  .btn-login:hover {
+    background-color: #432c6f;
+    border-color: #432c6f;
+  }
+  .btn-login:focus {
+    box-shadow: none;
+  }
+  .text-center {
+    margin-top: 20px;
+    font-size: 1.2rem;
+  }
+  @media screen and (max-width: 576px) {
+    .card {
+      margin: 10px;
+      padding: 30px;
+    }
+  }
+  
+  .card_title{
+    font-size: 30px;
+    color: #654ea3;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .text_title{
+    font-size: 25px;
+  }
+
+  .card_style{
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    margin-top: 25px;
+  }
+
+  .left{
+    border: 1px solid rgba(151, 149, 149, 0.3);
+    /* position: relative; */
+    padding: 15px ;
+    border-radius: 10px;
+
+
+  }
+
+  /* .left::after{
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background: #b6b6b8;
+    right: -10px;
+    top: 0;
+  } */
+
+  .left h2{
+    font-size: 25px;
+    color: #654ea3;
+  }
+
+  .input_style{
+    background: #d9cdf08a;
+    margin-right: 5px;
+  }
+
+  .left form{
+    margin-top: 5%;
+  }
+
+  .result_part{
+    border: 1px solid rgba(151, 149, 149, 0.3);
+    height: 440px;
+    overflow: scroll;
+    border-radius: 10px;
+  }
+
+.btn-submit{
+    background-color: #654ea3;
+    border-color: #654ea3;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+  }
+  
+  .main-wrapper {
+    max-width: 1170px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .upload-main-wrapper {
+    width: 220px;
+    margin: 0 auto;
+  }
+  
+  #file-upload-name {
+    margin: 4px 0 0 0;
+    font-size: 12px;
+  }
+  
+  .upload-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 40px auto 0;
+    position: relative;
+    cursor: pointer;
+    background-color: #bcaef5;
+    padding: 8px 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.2s linear all;
+    color: #ffffff;
+  }
+  
+  .upload-wrapper input[type=file] {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    top: 0;
+    bottom: 0;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  .upload-wrapper > svg {
+    width: 50px;
+    height: auto;
+    cursor: pointer;
+  }
+  
+  .upload-wrapper.success > svg {
+    transform: translateX(-200px);
+  }
+  
+  .upload-wrapper.uploaded {
+    transition: 0.2s linear all;
+    width: 60px;
+    border-radius: 50%;
+    height: 60px;
+    text-align: center;
+  }
+  
+  .upload-wrapper .file-upload-text {
+    position: absolute;
+    left: 80px;
+    opacity: 1;
+    visibility: visible;
+    transition: 0.2s linear all;
+  }
+  
+  .upload-wrapper.uploaded .file-upload-text {
+    text-indent: -999px;
+    margin: 0;
+  }
+  
+  .file-success-text {
+    opacity: 0;
+    transition: 0.2s linear all;
+    visibility: hidden;
+    transform: translateX(200px);
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .file-success-text svg {
+    width: 25px;
+    height: auto;
+  }
+  
+  .file-success-text span {
+    margin-left: 15px;
+  }
+  
+  .upload-wrapper.success .file-success-text {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+  
+  .upload-wrapper.success.uploaded .file-success-text {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+  
+  .upload-wrapper.success.uploaded .file-success-text span {
+    display: none;
+  }
+  
+  .upload-wrapper .file-success-text circle {
+    stroke-dasharray: 380;
+    stroke-dashoffset: 380;
+    transition: 1s linear all;
+    transition-delay: 1.4s;
+  }
+  
+  .upload-wrapper.success .file-success-text circle {
+    stroke-dashoffset: 0;
+  }
+  
+  .upload-wrapper .file-success-text polyline {
+    stroke-dasharray: 380;
+    stroke-dashoffset: 380;
+    transition: 1s linear all;
+    transition-delay: 2s;
+  }
+  
+  .upload-wrapper.success .file-success-text polyline {
+    stroke-dashoffset: 0;
+  }
+  
+  .upload-wrapper.success .file-upload-text {
+    -webkit-animation-name: bounceOutLeft;
+    animation-name: bounceOutLeft;
+    -webkit-animation-duration: 0.2s;
+    animation-duration: 0.2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  
+  @-webkit-keyframes bounceOutLeft {
+    20% {
+      opacity: 1;
+      -webkit-transform: translate3d(20px, 0, 0);
+      transform: translate3d(20px, 0, 0);
+    }
+    to {
+      opacity: 0;
+      -webkit-transform: translate3d(-2000px, 0, 0);
+      transform: translate3d(-2000px, 0, 0);
+    }
+  }
+  @keyframes bounceOutLeft {
+    20% {
+      opacity: 1;
+      -webkit-transform: translate3d(20px, 0, 0);
+      transform: translate3d(20px, 0, 0);
+    }
+    to {
+      opacity: 0;
+      -webkit-transform: translate3d(-2000px, 0, 0);
+      transform: translate3d(-2000px, 0, 0);
+    }
+  }
+
+  .btn img{
+    width: 15px;
+  }
+  .text{
+  font-size:15px;
+  }
+
+  .scroll{
+  overflow:scroll;
+  height:500px;
+  }
+
+  .bkbtns{
+ background: transparent;
+ outline:none;
+ border:none;
+ color: #fff!important;
+  font-size:18px;
+  }
+
+  .mar-left{
+  margin-left:50px;
+  }
+
+
+  .accordion {
+    display: grid;
+    align-content: center;
+    height: auto;
+  }
+
+  .accordion__container {
+    display: grid;
+    row-gap: .75rem;
+    padding: 2rem 1rem;
+    background-color: var(--container-color);
+    border-radius: .5rem;
+
+  }
+
+  .accordion__title {
+    font-size: var(--small-font-size);
+    color: var(--title-color);
+    font-weight: 400;
+    margin-top: .15rem;
+    transition: .2s;
+  }
+
+  .accordion__header {
+    display: flex;
+    column-gap: .5rem;
+    padding: 1.25rem 1.25rem 1.25rem 1rem;
+    cursor: pointer;
+  }
+
+  .accordion__description {
+    padding: 0 1.25rem 1.25rem 3rem;
+    font-size: var(--smaller-font-size);
+  }
+
+  .accordion__icon {
+    font-size: 1.5rem;
+    height: max-content;
+    color: var(--title-color);
+    transition: .3s;
+  }
+
+  .accordion__item {
+    box-shadow: 0 2px 6px rgba(38, 38, 38, 0.1);
+    background-color: var(--container-color);
+    border-radius: .25rem;
+    position: relative;
+    transition: all .25s ease;
+  }
+
+  .accordion__item::after {
+    content: '';
+    background-color: var(--first-color);
+    width: 5px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: .25rem 0 0 .25rem;
+  }
+
+  .accordion__item:nth-child(1) {
+    background-color: #fff7f0;
+  }
+
+  .accordion__item:nth-child(1)::after {
+    background-color: #ffc08a;
+  }
+
+  .accordion__item:nth-child(2) {
+    background-color: #f0f0ff;
+  }
+
+  .accordion__item:nth-child(2)::after {
+    background-color: #8a8aff;
+  }
+
+  .accordion__item:nth-child(3) {
+    background-color: #fff0f3;
+  }
+
+  .accordion__item:nth-child(3)::after {
+    background-color: #ff8aa1;
+  }
+
+  .accordion__item:nth-child(4) {
+    background-color: #f0faff;
+  }
+
+  .accordion__item:nth-child(4)::after {
+    background-color: #8ad8ff;
+  }
+
+  .accordion__content {
+    overflow: hidden;
+    height: 0;
+    transition: all .25s ease;
+  }
+
+  /*Rotate icon and add font weight to titles*/
+  .accordion-open .accordion__icon {
+    transform: rotate(45deg);
+  }
+
+  .accordion-open .accordion__title {
+    font-weight: 600;
+  }
+
+  /*=============== MEDIA QUERIES ===============*/
+  /* For medium devices */
+  @media screen and (min-width: 576px) {
+    .accordion__container {
+      width: 450px;
+      padding: 2.5rem;
+      justify-self: center;
+      border-radius: .75rem;
+    }
+    .accordion__header {
+      padding: 1.5rem;
+    }
+    .accordion__title {
+      padding-right: 3.5rem;
+    }
+    .accordion__description {
+      padding: 0 4rem 1.25rem 3.5rem;
+    }
+  }
+
+  /* For large devices */
+  @media screen and (min-width: 968px) {
+    .container {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
