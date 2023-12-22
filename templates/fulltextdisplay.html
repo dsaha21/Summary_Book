@@ -1,0 +1,92 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style.css') }}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css"  />
+</head>
+    <meta charset="UTF-8">
+    <title>THE TOTAL TEXT</title>
+</head>
+<body>
+<!--    <form method="get" onsubmit="return showMessage()">-->
+<!--        <p>-->
+<!--            <h2>{{ finaltext }}</h2>-->
+<!--        </p>-->
+<!--    </form>-->
+
+<div class="body_wrapper " >
+
+<!--    <div class="d-flex">-->
+
+        <div class="container">
+            <div class="card scroll">
+                <div class=" card_title"><u>THE ORGINAL CONTEXT OF PAGE NO.</u></div>
+
+               <form  method="get" onsubmit="return showMessage()">
+                <p class="" id="">
+                    <h2 class="text">{{ finaltext }}</h2>
+                </p>
+                </form>
+
+
+            </div>
+          </div>
+
+<!--     <div class="container">-->
+<!--            <div class="card scroll">-->
+<!--                <div class=" card_title"><u>THE DISPLAY.</u></div>-->
+
+<!--               <form method="get" onsubmit="return showMessage()">-->
+<!--                <p class="">-->
+<!--                    <h2 class="text">{{ finaltext2 }}</h2>-->
+<!--                </p>-->
+<!--                </form>-->
+
+
+<!--            </div>-->
+<!--          </div>-->
+<!--    </div>-->
+
+     <div class="container">
+         <div class="row">
+            <div class="text-center">
+                <button class="btn bkbtns fs-5 mt-5" onclick="goBack()"><i class='bx bx-left-arrow-alt' ></i>Back</a> </button>
+<!--                <a href="/"><i class='bx bx-left-arrow-alt' ></i>Back</a>-->
+            </div>
+         </div>
+     </div>
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/dist/boxicons.js" ></script>
+    <script>
+            function goBack() {
+                history.back();
+
+                //window.location.href = "/new/retrive/"+encodeURIComponent(fulltext)+encodeURIComponent(burl);
+
+            }
+            function redirectToAPI(fulltext) { //onclick="redirectToAPI('{{text}}')"
+                console.log(fulltext)
+                var url = "/new/retrive/" + encodeURIComponent(fulltext);
+                window.location.href = url;
+            }
+        </script>
+<!--    <div id="result"></div>-->
+
+
+
+</body>
+
+</html>

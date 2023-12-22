@@ -1,0 +1,238 @@
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <style>
+      body {
+        perspective: 800px;
+      }
+  
+      body * {
+        transform-style: preserve-3d;
+      }
+    </style>
+  </head>
+  
+  <body class="body_style ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto ">
+          <div class="screen">
+            <div class="card_box">
+              <div class="front-box">
+                <h6>Summary Content</h6>
+                <p class="page_number">15</p>
+              </div>
+              <div class="details-1">
+              
+                <p class="fullcontent">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                  industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                  scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                  into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                  release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                  software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+              </div>
+            </div>
+            
+  
+          </div>
+          <div class="screen">
+            <div class="card_box">
+              <div class="front-box">
+                <h6>Summary Content</h6>
+                <p class="page_number">15</p>
+              </div>
+              <div class="details-1">
+              
+                <p class="fullcontent">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                  industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                  scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                  into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                  release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                  software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+              </div>
+            </div>
+            
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+  
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+  
+  <script>
+    $(document).ready(function () {
+      $('.card_box').click(function () {
+        $(this).find('.details-1, .details-2').toggleClass('unfold').parents('.card_box').siblings().children('.details-1, .details-2').removeClass('unfold');
+        $(this).toggleClass('span').siblings('.card_box').removeClass('span');
+      });
+    });
+  </script>
+  
+  
+  </body>
+</html>
+
+
+
+<!-- Not showing 3D -->
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <style>
+      body {
+        perspective: 800px;
+      }
+  
+      body * {
+        transform-style: preserve-3d;
+      }
+    </style>
+  </head>
+  
+  <body class="body_style ">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto ">
+          <div class="screen">
+            <div class="card_box span">
+              <div class="front-box">
+                <h6>Summary Content</h6>
+                <p class="page_number">15</p>
+              </div>
+              <div class="details-1 unfold">
+              
+                <p class="fullcontent">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                  industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                  scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                  into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                  release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                  software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+              </div>
+            </div>
+            
+  
+          </div>
+          <div class="screen">
+            <div class="card_box span">
+              <div class="front-box">
+                <h6>Summary Content</h6>
+                <p class="page_number">15</p>
+              </div>
+              <div class="details-1 unfold">
+              
+                <p class="fullcontent">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                  industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                  scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                  into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                  release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                  software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+              </div>
+            </div>
+            
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+  
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+  
+  <script>
+    $(document).ready(function () {
+      $('.card_box').click(function () {
+        $(this).find('.details-1, .details-2').toggleClass('unfold').parents('.card_box').siblings().children('.details-1, .details-2').removeClass('unfold');
+        $(this).toggleClass('span').siblings('.card_box').removeClass('span');
+      });
+    });
+  </script>
+  
+  
+  <script> 
+  console.log(localStorage.getItem("results"));
+            //   $('#form-button-submit').on('click', function (e) {
+            //       e.preventDefault();
+  
+            //       $.ajax({
+            //           type: 'post',
+            //           url: '../Summarize_fold',
+            //           // data: { "name": link, "N1": n1, "N2": n2 },
+            //           dataType: 'json',
+                      
+                      
+            //           success: function (results) {
+            //               console.log(results);
+            //               var sItems = [];
+            //               //for(var i =0; i<results.thelength, i++){}
+            //               for (var key in results.summary) {
+            //                   //console.log("The whole...",key,"---",results.whole[key])
+            //                   if (results.summary.hasOwnProperty(key) && results.whole.hasOwnProperty(key)) {
+  
+            //                       var screenItem = `
+            //                       <div class='screen'>
+            //                           <div class='card_box '>
+            //                               <div class='front-box'>
+            //                                   <h6> ${ results.summary[key] }</h6>
+            //                                   <p class="page_number">${key}</p>
+            //                               </div>
+                                          
+            //                               <div class='details-1'>
+                                          
+            //                               <p class="fullcontent">
+            //                                   Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            //                                   industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+            //                                   scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+            //                                   into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+            //                                   release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+            //                                   software like Aldus PageMaker including versions of Lorem Ipsum.
+            //                               </p>
+            //                               </div>
+            //                           </div>
+            //                       </div>
+            //                       `;
+            //                       sItems.push(screenItem); 
+            //                   }
+  
+            //               }
+            //               //accordionContainer.append(accordionItems.join(''));
+            //           }
+            //       });
+                
+                
+            // });
+  
+  
+  
+    </script>  
+  </body>
+</html>

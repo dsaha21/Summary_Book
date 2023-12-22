@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Summarization</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="/static/css/jquery-ui.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+
+    <header style="background-color: #004A56;"
+        class="fixed inset-0 w-full flex flex-col justify-center justify-items-center content-center h-20 rounded-b-lg">
+<!--        <img src="/static/images/logo.png" alt="Logo" class="object-contain w-16 self-center md:self-left md:w-30">-->
+        <div class="self-center text-white">Data Summarization</div>
+    </header>
+
+    <section class="flex flex-wrap mt-20 w-full">
+        <div class="w-full md:w-1/2">
+            <form class="w-full flex flex-col md:h-screen" id="postForm"  method="post">
+
+
+                <div class="flex self-center">
+                    <button class="m-1 bg-green-500 hover:bg-blue-700 text-white font-semi-bold py-2 px-4 rounded-lg" id="form-button-submit"
+                        type="submit">Submit</button>
+                    <input class="m-1 bg-green-500 hover:bg-blue-700 text-white font-semi-bold py-2 px-4 rounded-lg"
+                        type="file" id="myFile" name="filename">
+                    <input class="m-1 bg-green-500 hover:bg-blue-700 text-white font-semi-bold py-2 px-4 rounded-lg"
+                        type="text" id="glink" name="glink" placeholder="paste gdrive url">
+                </div>
+<!--                <div class="flex self-center"> action="{{url_for('Summarize')}}"-->
+
+<!--                    <input class="m-1 bg-green-500 hover:bg-blue-700 text-white font-semi-bold py-2 px-4 rounded-lg"-->
+<!--                        type="text" id="pagestart" name="pageStart" placeholder="start page number">-->
+<!--                    <input class="m-1 bg-green-500 hover:bg-blue-700 text-white font-semi-bold py-2 px-4 rounded-lg"-->
+<!--                        type="text" id="pageend" name="pageEnd" placeholder="end page number">-->
+<!--                </div>-->
+                <div class="p-1.5">
+                <label>enter 2 range of page numbers :</label>
+                    <input class="m-1 bg-green-500 hover:bg-blue-700 text-white font-semi-bold py-2 px-4 rounded-lg"
+                        type="number" id="N1" name="N1">
+                    <!--<input type="number" class="shadow appearance-none border rounded w-full py-2 px-3 mt-1.5 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="number1" name="N1"/>-->
+                    <input class="m-1 bg-green-500 hover:bg-blue-700 text-white font-semi-bold py-2 px-4 rounded-lg"
+                        type="number" id="N2" name="N2">
+                </div>
+            </form>
+
+        </div>
+        <div class="w-full md:w-1/2">
+            <div class="mt-2 flex flex-col w-full md:h-screen">
+
+
+                    <p class="w-11/12  rounded-lg p-2 border self-center justify-center md:h-3/4" id="rand" name="result">
+
+                                <div id="progress" hidden>
+                                    <img style="width:20%" src="/static/images/Book.gif"/>
+                                </div>
+                    </p>
+                    <!--br>-->
+<!--                <button-->
+<!--                    class="m-2 bg-blue-400 hover:bg-blue-700 text-white font-semi-bold py-2 px-4 rounded-lg self-center"-->
+<!--                    onclick="myFunction()">Copy text</button>-->
+            </div>
+        </div>
+
+    </section>
+
+    <script>
+    $('#form-button-submit').on('click', function(e){
+       e.preventDefault();
+       let HTM = $('#rand');
+       HTM.empty();
+
+       var link = $('input#glink').val()
+       var n1 = $('input#N1').val()
+       var n2 = $('input#N2').val()
+
+
+       $('#progress').show();
+
+      $.ajax({
+         type: 'post',
+         url: '../Summarize',
+         data: {"name":link, "N1":n1, "N2":n2},
+         dataType:'json',
+         success: function(results){
+            $('#progress').hide();
+            let HTMlink = $('#link')
+            HTM.empty();
+            HTM.append(results)
+         }
+      });
+    });
+    </script>
+
+    <script>
+        function myFunction() {
+            /* Get the text field */
+            var copyText = document.getElementById("myInput");
+
+            /* Select the text field */
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+            /* Copy the text inside the text field */
+            navigator.clipboard.writeText(copyText.value);
+        }
+    </script>
+
+    <script>
+        function Check() {
+
+            var reg = /<(.|\n)*>/g;
+
+            if (reg.test(document.getElementById("data").value) == true) {
+                var ErrorText = 'Make Sure You Provide Valid Data.';
+                alert('Error Text');
+
+            }
+        }
+    </script>
+
+</body>
+
+</html>
+

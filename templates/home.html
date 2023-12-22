@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style_fold.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container mt-4">
+        <h3 class="text-center text-dark text_title">THE HOME PAGE FOR SUMMARY <span class="text-primary"></span></h3>
+        <!--      <h6 class="text-center text-dark text_title">THE LOADED BOOK CONSISTS OF PAGES</h6>-->
+        <div class=" card_style">
+            <div class="card_content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form_part left">
+                                <h2 class="text_label text-center"> Here For Summarize</h2>
+                                <form id="postForm" method="post">
+
+                                    <div class="form-group  mb-3">
+                                        <label for="" class="mb-2">Enter Google Drive Link</label>
+                                        <input type="text" class="form-control input_style" id="glink" name="glink"
+                                            placeholder="Enter or Paste Your Link" />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="" class="mb-2">Enter 2 range of page number</label>
+                                        <div class="d-flex ">
+                                            <input type="number" class="form-control input_style " id="N1" name="N1"
+                                                placeholder="Enter Number" />
+                                            <input type="number" class="form-control input_style" id="N2" name="N2"
+                                                placeholder="Enter Number" />
+                                        </div>
+
+                                    </div>
+                                    <div class="text-center">
+
+                                        <button id="form-button-submit" type="submit"
+                                            class="btn btn-primary  btn-submit">
+                                            Summarize
+
+                                        </button>
+                                    </div>
+                                </form>
+                                <div class="main-wrapper">
+                                    <div class="upload-main-wrapper">
+                                        <div class="upload-wrapper">
+                                            <input type="file" id="upload-file">
+                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                preserveAspectRatio="xMidYMid meet"
+                                                viewBox="224.3881704980842 176.8527621722847 221.13266283524905 178.8472378277154"
+                                                width="221.13" height="178.85">
+                                                <defs>
+                                                    <path
+                                                        d="M357.38 176.85C386.18 176.85 409.53 204.24 409.53 238.02C409.53 239.29 409.5 240.56 409.42 241.81C430.23 246.95 445.52 264.16 445.52 284.59C445.52 284.59 445.52 284.59 445.52 284.59C445.52 309.08 423.56 328.94 396.47 328.94C384.17 328.94 285.74 328.94 273.44 328.94C246.35 328.94 224.39 309.08 224.39 284.59C224.39 284.59 224.39 284.59 224.39 284.59C224.39 263.24 241.08 245.41 263.31 241.2C265.3 218.05 281.96 199.98 302.22 199.98C306.67 199.98 310.94 200.85 314.93 202.46C324.4 186.96 339.88 176.85 357.38 176.85Z"
+                                                        id="b1aO7LLtdW"></path>
+                                                    <path
+                                                        d="M306.46 297.6L339.79 297.6L373.13 297.6L339.79 255.94L306.46 297.6Z"
+                                                        id="c4SXvvMdYD"></path>
+                                                    <path
+                                                        d="M350.79 293.05L328.79 293.05L328.79 355.7L350.79 355.7L350.79 293.05Z"
+                                                        id="b11si2zUk"></path>
+                                                </defs>
+                                                <g>
+                                                    <g>
+                                                        <g>
+                                                            <use xlink:href="#b1aO7LLtdW" opacity="1" fill="#ffffff"
+                                                                fill-opacity="1"></use>
+                                                        </g>
+                                                        <g>
+                                                            <g>
+                                                                <use xlink:href="#c4SXvvMdYD" opacity="1" fill="#363535"
+                                                                    fill-opacity="1"></use>
+                                                            </g>
+                                                            <g>
+                                                                <use xlink:href="#b11si2zUk" opacity="1" fill="#363535"
+                                                                    fill-opacity="1"></use>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <span class="file-upload-text">Upload File</span>
+                                            <div class="file-success-text">
+                                                <svg version="1.1" id="check" xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                    viewBox="0 0 100 100" xml:space="preserve">
+                                                    <circle
+                                                        style="fill:rgba(0,0,0,0);stroke:#ffffff;stroke-width:10;stroke-miterlimit:10;"
+                                                        cx="49.799" cy="49.746" r="44.757" />
+                                                    <polyline
+                                                        style="fill:rgba(0,0,0,0);stroke:#ffffff;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+                                                        points="
+                                                        27.114,51 41.402,65.288 72.485,34.205 " />
+                                                </svg> <span>Successfully</span>
+                                            </div>
+                                        </div>
+                                        <p id="file-upload-name"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <!-- starting for the next tab (3D Folding view ) -->
+                            <div class="result_part_right text-center">
+                                <img src="static/images/6895825.png" class="img-fluid">
+                            </div>
+
+                            <!-- BELOW IS THE CODE FOR THE ACCORDIAN COPIED TO ANOTHER FOLDER  -->
+                            <!-- <div class="result_part right"> -->
+                            <!-- <section class="accordion container">
+
+                                </section> -->
+                            <p id="rand" name="result">
+                                {% if finaltext %}
+                                <script>
+                                    alert("{{ finaltext }}")
+                                </script>
+
+                                {% endif %}
+                                <!-- <div id="progress" hidden>
+                                    <img height="" src="static/images/Book.gif" />
+                                </div> -->
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="text-center mt-5">
+                <form method="POST" action="{{ url_for('logout') }}">
+                    <button class="btn btn-danger" name="backbutton" id="backbutton">Logout</button>
+                </form>
+                <!--                <a href="/"><i class='bx bx-left-arrow-alt' ></i>Back</a>  onclick="goback()"-->
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+
+
+    <script>
+        // $('#form-button-submit').on('click', function (e) {
+        //     e.preventDefault();
+        //     let HTM = $('#rand');
+        //     HTM.empty();
+        //     var link = $('input#glink').val()
+        //     var n1 = $('input#N1').val()
+        //     var n2 = $('input#N2').val()
+
+        //     if (link) {
+        //         $.ajax({
+        //             type: 'post',
+        //             url: '../Summarize_fold',
+        //             data: { "name": link, "N1": n1, "N2": n2 },
+        //             dataType: 'json',
+
+
+        //             success: function (results) {
+        //                 console.log(results);
+        //                 localStorage.setItem("results", results);
+        //                 var sItems = [];
+        //                 //for(var i =0; i<results.thelength, i++){}
+        //                 // for (var key in results.summary) {
+        //                 //     //console.log("The whole...",key,"---",results.whole[key])
+        //                 //     if (results.summary.hasOwnProperty(key) && results.whole.hasOwnProperty(key)) {
+
+        //                 //         var screenItem = `
+        //                 //         <div class='screen'>
+        //                 //             <div class='card_box '>
+        //                 //                 <div class='front-box'>
+        //                 //                     <h6> ${ results.summary[key] }</h6>
+        //                 //                     <p class="page_number">${key}</p>
+        //                 //                 </div>
+
+        //                 //                 <div class='details-1'>
+
+        //                 //                 <p class="fullcontent">
+        //                 //                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+        //                 //                     industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+        //                 //                     scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+        //                 //                     into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+        //                 //                     release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+        //                 //                     software like Aldus PageMaker including versions of Lorem Ipsum.
+        //                 //                 </p>
+        //                 //                 </div>
+        //                 //             </div>
+        //                 //         </div>
+        //                 //         `;
+
+
+        //                 //         //ignore the part  <div class="accordion__item">
+        //                 //         //             <header class="accordion__header">
+        //                 //         //                 <i class='bx bx-plus accordion__icon'></i>
+        //                 //         //                 <h3 class="accordion__title">When and how should it be used?</h3>
+        //                 //         //             </header>
+
+        //                 //         //             <div class="accordion__content">
+        //                 //         //                 <p class="accordion__description">
+        //                 //         //                     It should be used when users only need a few key concepts or
+        //                 //         //                     descriptions
+        //                 //         //                     of the content on a single page.
+        //                 //         //                 </p>
+        //                 //         //             </div>
+        //                 //         //         </div>
+        //                 //         sItems.push(screenItem); 
+        //                 //     }
+
+        //                 // }
+        //                 //accordionContainer.append(accordionItems.join(''));
+        //             },
+        //             complete: function () {
+        //                 // Once the AJAX request is complete, open the link in a new tab.
+        //                 window.open("./Summarize_fold", "_blank");
+        //             }
+        //         });
+        //     } else {
+        //         //console.log("Creds are missing")
+        //         alert("Please fill in all the required fields.")
+        //     }
+        // });
+
+
+
+
+
+
+        $('#form-button-submit').on('click', function (e) {
+            console.log("calling function");
+            e.preventDefault();
+            let HTM = $('#rand');
+            HTM.empty();
+            var link = $('input#glink').val()
+            var n1 = $('input#N1').val()
+            var n2 = $('input#N2').val()
+
+            var accordionContainer = $('#accordion-container');
+
+
+            // Clear any existing accordion items
+            accordionContainer.empty();
+
+
+            if (link) {
+
+                $.ajax({
+                    type: 'post',
+                    url: '../Summarize',
+                    data: { "name": link, "N1": n1, "N2": n2 },
+                    dataType: 'json',
+
+
+                    success: function (results) {
+                        console.log("result found ");
+                        localStorage.setItem("results", JSON.stringify(results));
+                        // if result redirect to new tab
+                        var resultPage = window.open('Summarize_fold', '_blank');
+                        // Wait for the new tab to load, then populate it with content
+                        resultPage.addEventListener('load', function () {
+                            console.log("redirecting now..");
+                            resultPage.postMessage(results.summary, '*');
+                        });
+
+                    }
+                });
+            } else {
+                //console.log("Creds are missing")
+                alert("Please fill in all the required fields.")
+            }
+        });
+    </script>
+
+
+
+
+
+
+    <script>
+        function myFunction() {
+            /* Get the text field */
+            var copyText = document.getElementById("myInput");
+
+            /* Select the text field */
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+            /* Copy the text inside the text field */
+            navigator.clipboard.writeText(copyText.value);
+        }
+    </script>
+
+    <script>
+        function Check() {
+
+            var reg = /<(.|\n)*>/g;
+
+            if (reg.test(document.getElementById("data").value) == true) {
+                var ErrorText = 'Make Sure You Provide Valid Data.';
+                alert('Error Text');
+
+            }
+        }
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#gotohome").click(function (e) {
+                e.preventDefault();
+                var bigText = $("#rand").html();
+                sessionStorage.setItem("bigText", bigText);
+                window.location.href = "page2.html";
+            });
+        });
+    </script>
+
+</body>
+
+</html>
